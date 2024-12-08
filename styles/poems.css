@@ -1,0 +1,119 @@
+/* Poems page styles */
+.poems-container {
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 4rem);
+    background: linear-gradient(135deg, #fff5f6 0%, #ffe4e6 100%);
+}
+
+.poems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    --background: linear-gradient(45deg, #ff7eb3, #ff758c);
+    width: 100%;
+    height: 400px;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+    animation: scaleIn 0.6s ease-out;
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+.card::before {
+    background: linear-gradient(45deg, #f6d365, #fda085);
+    transform: rotate(3deg);
+}
+
+.card::after {
+    background: linear-gradient(45deg, #84fab0, #8fd3f4);
+    transform: rotate(-3deg);
+}
+
+.card-info {
+    background: rgba(41, 43, 44, 0.95);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.7rem;
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(5px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card:hover::before {
+    transform: rotate(5deg) scale(1.05);
+    opacity: 0.7;
+}
+
+.card:hover::after {
+    transform: rotate(-5deg) scale(1.05);
+    opacity: 0.7;
+}
+
+.card:hover .card-info {
+    background: rgba(41, 43, 44, 0.8);
+    color: #ffffff;
+}
+
+.poem-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.poem-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    white-space: pre-line;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .poems-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .poems-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card {
+        height: 350px;
+    }
+}

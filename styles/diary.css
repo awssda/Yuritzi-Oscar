@@ -1,0 +1,113 @@
+/* Diary page styles */
+.diary-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.diary-form {
+    background: #f8f4e5;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transform-origin: top;
+    animation: scaleIn 0.6s ease-out;
+}
+
+.diary-textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 1rem;
+    border: 2px solid #a39f8b;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    resize: vertical;
+    background: #fff;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.diary-textarea:focus {
+    border-color: #ff6f91;
+    box-shadow: 0 0 10px rgba(255, 111, 145, 0.2);
+    outline: none;
+}
+
+.diary-submit {
+    background: #ff6f91;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 111, 145, 0.1);
+}
+
+.diary-submit:hover {
+    background: #ff3d6e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 111, 145, 0.2);
+}
+
+.diary-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.diary-entry {
+    background: #f8f4e5;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: slideIn 0.6s ease-out;
+    transform-origin: top;
+}
+
+.diary-entry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.entry-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.entry-content {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .diary-container {
+        padding: 1rem;
+    }
+
+    .diary-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .diary-form {
+        padding: 1rem;
+    }
+
+    .entry-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar & Yuritzi - Poemas</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/poems.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="home.html" class="nav-link">
+                    <i data-lucide="camera"></i>
+                    <span>Recuerdos</span>
+                </a>
+                <a href="poems.html" class="nav-link">
+                    <i data-lucide="heart"></i>
+                    <span>Poemas</span>
+                </a>
+                <a href="diary.html" class="nav-link">
+                    <i data-lucide="book"></i>
+                    <span>Diario</span>
+                </a>
+            </div>
+            <button id="logoutBtn" class="nav-link">
+                <i data-lucide="log-out"></i>
+                <span>Salir</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="poems-container">
+        <div class="poems-grid" id="poemsGrid"></div>
+    </main>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/poems.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
